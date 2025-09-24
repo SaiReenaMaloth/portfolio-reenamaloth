@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Reena Maloth - Business Analyst & AI Practitioner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="rgba(255,255,255,0.05)"><circle cx="50" cy="50" r="2"/></svg>');
+        }
+
+        .profile-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            border: 4px solid rgba(255,255,255,0.2);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #fff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-light {
+            background: white;
+        }
+
+        .section-dark {
+            background: #f7fafc;
+        }
+
+        h2 {
+            color: #2d3748;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #a3bffa 0%, #a3bffa 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.3em;
+            background-position: 0 88%;
+            padding: 0.2rem 0;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: #667eea;
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 55%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            top: 20px;
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+            right: auto;
+        }
+
+        .company {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .date {
+            color: #718096;
+            font-style: italic;
+        }
+
+        /* Skills Grid */
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #667eea;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .project-card h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            background: #e2e8f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: calc(100% - 40px);
+                left: 40px !important;
+            }
+
+            .timeline-item::before {
+                left: -30px !important;
+                right: auto !important;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="profile-icon">SR</div>
+            <h1>Sai Reena Maloth</h1>
+            <p class="tagline">Business Analyst & AI Practitioner | Ex-Google | MSIT Candidate @ Fordham University</p>
+            <div class="badges">
+                <div class="badge">5+ Years Experience</div>
+                <div class="badge">Business Analytics</div>
+                <div class="badge">AI & Machine Learning</div>
+                <div class="badge">Google Certified</div>
+                <div class="badge">IIM Indore Certified</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="section-light">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>Business Analyst professional with <span class="highlight">5 years of experience</span>, including significant tenure at <span class="highlight">Google India</span> where I specialized in digital operations, analytics, and customer acquisition strategies.</p>
+                
+                <p>I bridge the gap between business needs and technology solutions, with expertise in <span class="highlight">SQL, Power BI, BigQuery, and cloud technologies</span>. My work involves interpreting complex data, optimizing processes, and collaborating across teams to deliver measurable business impact.</p>
+                
+                <p>Currently pursuing my <span class="highlight">Master's in Information Technology at Fordham University</span>, I'm transitioning into AI-focused roles while maintaining my strong foundation in business analysis. I hold a <span class="highlight">Business Analytics certification from IIM Indore</span> and am passionate about impactful, entrepreneurial projects.</p>
+                
+                <p>I thrive on transforming data into actionable insights and am always eager to work on projects that drive meaningful organizational growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-dark">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="company">Fordham University</div>
+                        <div class="date">Summer 2024</div>
+                        <div class="position">CIO Intern</div>
+                        <p>Supported IT infrastructure assessments, workflow optimization, and digital transformation planning. Collaborated on cybersecurity, cloud strategies, and delivered executive dashboards for KPI tracking.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="company">Google Operations Center</div>
+                        <div class="date">Apr 2022 - Jan 2024</div>
+                        <div class="position">Senior Digital Media Associate</div>
+                        <p>Led business requirements analysis for Google Ads/Analytics clients, developed comprehensive process documentation, and supported system deployments. Created GA4 reporting dashboards and conducted UAT testing for process improvements.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="company">Sutherland</div>
+                        <div class="date">Oct 2020 - Feb 2022</div>
+                        <div class="position">Associate</div>
+                        <p>Collaborated with IT and business teams to resolve technical issues, documented and reengineered business processes, and produced actionable analytics reports for product enhancements.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="company">Eliton India</div>
+                        <div class="date">Jan 2017 - Jan 2020</div>
+                        <div class="position">Business Development Executive</div>
+                        <p>Conducted B2B requirements gathering, developed analytics reports, and supported vendor engagement and system selection processes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-light">
+        <div class="container">
+            <h2>Technical & Business Skills</h2>
+            <div class="skills-categories">
+                <div class="skill-category">
+                    <h3>Business Analysis</h3>
+                    <ul class="skill-list">
+                        <li>Requirements Gathering & Analysis</li>
+                        <li>Process Mapping & Workflow Reengineering</li>
+                        <li>Stakeholder Communication</li>
+                        <li>UAT & System Testing</li>
+                        <li>Functional Documentation</li>
+                        <li>Agile Methodologies</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Data Analytics & Tools</h3>
+                    <ul class="skill-list">
+                        <li>SQL & Database Management</li>
+                        <li>Power BI & Tableau</li>
+                        <li>Google Analytics & Google Ads</li>
+                        <li>BigQuery & Cloud Technologies</li>
+                        <li>Predictive Analytics</li>
+                        <li>Excel Advanced Analytics</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>AI & Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li>Machine Learning Fundamentals</li>
+                        <li>Python for Data Analysis</li>
+                        <li>AI Tool Implementation</li>
+                        <li>API Integration & SDKs</li>
+                        <li>Cloud Platforms (AWS, Azure)</li>
+                        <li>Mobile App Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-dark">
+        <div class="container">
+            <h2>Projects & Initiatives</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Google Ads Analytics Optimization</h3>
+                    <p>Developed comprehensive analytics dashboards and reporting workflows for Google Ads clients, resulting in improved campaign efficiency and data-driven decision making.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Google Analytics</span>
+                        <span class="tech-tag">BigQuery</span>
+                        <span class="tech-tag">Data Visualization</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>AI-Powered Business Insights Platform</h3>
+                    <p>Currently developing a machine learning platform for predictive business analytics and automated reporting (Personal Project - Coming Soon)</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Predictive Analytics</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Digital Transformation Strategy</h3>
+                    <p>Supported Fordham University's CIO office in IT infrastructure assessment and digital learning strategy implementation.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Strategy</span>
+                        <span class="tech-tag">Cloud Solutions</span>
+                        <span class="tech-tag">KPI Tracking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section-light">
+        <div class="container">
+            <h2>Education & Certifications</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Fordham University</h3>
+                    <p>Master of Science in Information Technology<br>Expected Graduation: Dec 2025</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>IIM Indore</h3>
+                    <p>Business Analytics Certification<br>Advanced analytics and business intelligence</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Avinash College of Commerce</h3>
+                    <p>Bachelor of Business Administration, Finance<br>Graduated: May 2019</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-dark">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <div class="contact-info">
+                <p>I'm always interested in discussing AI projects, business analysis opportunities, and innovative technology solutions.</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:sm213@fordham.edu" class="contact-link">
+                        📧 Email
+                    </a>
+                    <a href="https://linkedin.com/in/saireenamaloth" class="contact-link">
+                        💼 LinkedIn
+                    </a>
+                    <a href="tel:201-985-4935" class="contact-link">
+                        📞 Call
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sai Reena Maloth. Business Analyst & AI Practitioner</p>
+            <p>Jersey City, NJ | sm213@fordham.edu | (201) 985-4935</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
